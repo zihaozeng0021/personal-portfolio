@@ -36,7 +36,8 @@ export default {
   width: 0;
   height: 0;
   pointer-events: none;
-  transition: transform 0.05s linear;
+  transition: transform 0.01s linear;
+  z-index: 1;
 }
 .custom-cursor.down {
   border-left: 12px solid transparent;
