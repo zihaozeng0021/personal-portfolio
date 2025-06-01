@@ -10,7 +10,7 @@
 
         <div class="line2">
           <span class="prefix">Hi, I AM </span>
-          <span class="font2">A SOFTWARE ENGINEER</span>
+          <span class="font2">WELCOME TO MY PORTFOLIO</span>
         </div>
       </div>
     </MeltBall>
@@ -60,7 +60,7 @@ import MeltBall from '../components/CenterBall.vue'
 
 .line2 {
   font-family: Georgia, serif;
-  font-size: 5rem;
+  font-size: 3rem;
   font-weight: 700;
   line-height: 1;
   color: #fff;
@@ -68,7 +68,7 @@ import MeltBall from '../components/CenterBall.vue'
 
 .prefix {
   font-family: Arial, sans-serif;
-  font-size: 3rem;
+  font-size: 5rem;
   font-weight: 700;
   visibility: hidden;
 }
