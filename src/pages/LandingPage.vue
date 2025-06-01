@@ -1,9 +1,18 @@
-< !-- src/pages/LandingPage.vue -->
+<!-- src/pages/LandingPage.vue -->
 <template>
   <section class="page landing-page">
     <MeltBall>
-      <h1>aaaa</h1>
-      <p>aaaa</p>
+      <div class="text-block">
+        <div class="line1">
+          <span class="font1">Hi, I AM </span>
+          <span class="font1-alt">ZIHAO ZENG</span>
+        </div>
+
+        <div class="line2">
+          <span class="prefix">Hi, I AM </span>
+          <span class="font2">A SOFTWARE ENGINEER</span>
+        </div>
+      </div>
     </MeltBall>
   </section>
 </template>
@@ -27,9 +36,40 @@ import MeltBall from '../components/MeltBall.vue'
   background-color: inherit;
 }
 
+.text-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 
+.line1 {
+  font-family: Arial, sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 2rem;
+  color: #fff;
+}
 
+.font1-alt {
+  font-family: Arial Black, sans-serif;
+  font-size: 5rem;
+  font-weight: 800;
+  color: #fff;
+}
 
+.line2 {
+  font-family: Georgia, serif;
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+}
+
+.prefix {
+  font-family: Arial, sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  visibility: hidden;
+}
 </style>
-
-
