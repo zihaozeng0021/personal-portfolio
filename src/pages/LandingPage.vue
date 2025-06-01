@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-import MeltBall from '../components/MeltBall.vue'
+import MeltBall from '../components/CenterBall.vue'
 </script>
 
 <style scoped>
