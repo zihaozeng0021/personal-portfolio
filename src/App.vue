@@ -1,3 +1,4 @@
+<!-- src/App.vue -->
 <template>
   <div id="app" @click="onClick">
     <NavigationBar
@@ -48,8 +49,15 @@ export default {
     }
   },
   methods: {
+    isInteractive(el) {
+      return el && el.closest?.(
+          'a, button, input, textarea, select, [role="button"], [role="link"]'
+      )
+    },
     onClick(e) {
       if (e.target.closest('.nav')) return
+
+      if (this.isInteractive(e.target)) return
 
       const { clientY } = e
       const half = window.innerHeight / 2
