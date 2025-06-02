@@ -37,7 +37,7 @@
       "popularLibraries": "Popular Libraries & Frameworks",
       "programmingLanguages": "Major Programming Languages",
       "others": "Others",
-      "note": "The quantitative skill bars are subjective. For reference, this portfolio is written in Vue.js."
+      "note": "The quantitative display of these skill bars is subjective. This portfolio is written in Vue.js. The corresponding skill bar of vue.js is 30% can serve as a reference standard."
     }
   },
 
@@ -71,5 +71,29 @@
         "noteText": "I started my undergraduate journey with almost 0 knowledge of computer science—I didn’t even know how to print “Hello, World.” After three years of hard work, I graduated with a First-Class Honours degree and a strong theoretical foundation in computer science."
       }
     ]
+  },
+
+  "projects": {
+    "title": "Personal Projects (To be continued)",
+    "entries": [
+    {
+      "name": "Project Name 1",
+      "description": "This is a placeholder description for Project 1. Briefly describe what this project does or its purpose."
+    },
+    {
+      "name": "Project Name 2",
+      "description": "This is a placeholder description for Project 2. Briefly describe what this project does or its purpose."
+    },
+    {
+      "name": "Project Name 3",
+      "description": "This is a placeholder description for Project 3. Briefly describe what this project does or its purpose."
+    }],
+    "demo": "Demo",
+    "code": "Code"
+  },
+
+  "experience": {
+    "title": "Work Experience",
+    "description": "I have just graduated with my bachelor’s degree and currently do not have formal work experience Ծ‸Ծ."
   }
 }

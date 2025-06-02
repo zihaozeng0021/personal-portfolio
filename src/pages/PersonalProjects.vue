@@ -2,41 +2,41 @@
 <template>
   <section class="projects">
     <div class="projects-container">
-      <h1 class="page-title">Personal Projects (To be continued)</h1>
+      <h1 class="page-title">{{$t('projects.title')}}</h1>
       <div class="projects-grid">
         <!-- Project 1 -->
         <div class="project-item">
-          <h2 class="project-title">Project Name 1</h2>
+          <h2 class="project-title">{{$t('projects.entries[0].name')}}</h2>
           <p class="project-description">
-            This is a placeholder description for Project 1. Briefly describe what this project does or its purpose.
+            {{$t('projects.entries[0].description')}}
           </p>
           <div class="buttons">
-            <button class="btn" @click="handleDemoClick">Demo</button>
-            <button class="btn" @click="handleCodeClick">Code</button>
+            <button class="btn" @click="handleDemoClick">{{$t('projects.demo')}}</button>
+            <button class="btn" @click="handleCodeClick">{{$t('projects.code')}}</button>
           </div>
         </div>
 
         <!-- Project 2 -->
         <div class="project-item">
-          <h2 class="project-title">Project Name 2</h2>
+          <h2 class="project-title">{{ $t('projects.entries[1].name') }}</h2>
           <p class="project-description">
-            This is a placeholder description for Project 2. Briefly describe what this project does or its purpose.
+            {{ $t('projects.entries[1].description') }}
           </p>
           <div class="buttons">
-            <button class="btn" @click="handleDemoClick">Demo</button>
-            <button class="btn" @click="handleCodeClick">Code</button>
+            <button class="btn" @click="handleDemoClick">{{ $t('projects.demo') }}</button>
+            <button class="btn" @click="handleCodeClick">{{ $t('projects.code') }}</button>
           </div>
         </div>
 
         <!-- Project 3 -->
         <div class="project-item">
-          <h2 class="project-title">Project Name 3</h2>
+          <h2 class="project-title">{{ $t('projects.entries[2].name') }}</h2>
           <p class="project-description">
-            This is a placeholder description for Project 3. Briefly describe what this project does or its purpose.
+            {{ $t('projects.entries[2].description') }}
           </p>
           <div class="buttons">
-            <button class="btn" @click="handleDemoClick">Demo</button>
-            <button class="btn" @click="handleCodeClick">Code</button>
+            <button class="btn" @click="handleDemoClick">{{$t('projects.demo')}}</button>
+            <button class="btn" @click="handleCodeClick">{{$t('projects.code')}}</button>
           </div>
         </div>
       </div>
