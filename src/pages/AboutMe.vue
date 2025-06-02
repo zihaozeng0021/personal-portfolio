@@ -104,6 +104,13 @@
           </div>
         </div>
       </div>
+
+      <!-- Note added at the bottom -->
+      <div class="note">
+        <p class="note-text">
+          The quantitative skill bars are subjective. For reference, this portfolio is written in Vue.js.
+        </p>
+      </div>
     </div>
   </section>
 </template>
@@ -159,7 +166,6 @@ export default {
     };
   },
   mounted() {
-
     this.$nextTick(() => {
       setTimeout(() => {
         this.animateSkills = true;
@@ -177,7 +183,6 @@ export default {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-
   padding-top: 10vh;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -294,6 +299,18 @@ export default {
   width: 0;
   border-radius: 4px;
   transition: width 1s ease-in-out;
+}
+
+/* Note at bottom */
+.note {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.note-text {
+  font-size: 0.9rem;
+  color: #cccccc;
+  font-style: italic;
 }
 
 @media (max-width: 800px) {

@@ -4,55 +4,79 @@
     <h1>Educational Background</h1>
     <div class="timeline">
       <!-- Entry 1: Into Manchester -->
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <h2>Into Manchester, Manchester, England</h2>
-          <span class="date">January 2022 – July 2022</span>
-          <h3>A-level</h3>
-          <p><strong>Course Units:</strong> Physics, Mathematics, Further Maths</p>
-          <p>
-            <strong>Grade:</strong> All A* in my A-level courses, which took me only 7 months to achieve, placing me in the
-            <a
-                href="https://www.gov.uk/government/publications/infographic-a-level-results-2022/infographics-for-a-level-results-2022-accessible"
-                target="_blank"
-                rel="noopener"
-            >
-              top 5%
-            </a>
-            .
-          </p>
+      <transition name="fade">
+        <div v-if="showFirst" class="timeline-item">
+          <div class="timeline-content">
+            <h2>Into Manchester, Manchester, England</h2>
+            <span class="date">January 2022 – July 2022</span>
+            <h3>A-level</h3>
+            <p><strong>Course Units:</strong> Physics, Mathematics, Further Maths</p>
+            <p>
+              <strong>Grade:</strong> All A* in my A-level courses, which took me only 7 months to achieve, placing me in the
+              <a
+                  href="https://www.gov.uk/government/publications/infographic-a-level-results-2022/infographics-for-a-level-results-2022-accessible"
+                  target="_blank"
+                  rel="noopener"
+              >
+                top 5%
+              </a>
+              .
+            </p>
+          </div>
         </div>
-      </div>
+      </transition>
 
       <!-- Entry 2: University of Manchester -->
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <h2>University of Manchester, Manchester, England</h2>
-          <span class="date">September 2022 – July 2025</span>
-          <h3>BSc (Hons) Computer Science</h3>
-          <p><strong>Grade:</strong> First Class Honors</p>
+      <transition name="fade">
+        <div v-if="showSecond" class="timeline-item">
+          <div class="timeline-content">
+            <h2>University of Manchester, Manchester, England</h2>
+            <span class="date">September 2022 – July 2025</span>
+            <h3>BSc (Hons) Computer Science</h3>
+            <p><strong>Grade:</strong> First Class Honors</p>
 
-          <p><strong>Course Units above First-Class level:</strong></p>
-          <ul>
-            <li>
-              <strong>First year:</strong> First Year Team Project, Mathematical Techniques for Computer Science, Data Science, Introduction to Programming
-            </li>
-            <li>
-              <strong>Second year:</strong> Logic and Modelling, Machine Learning, Introduction to Visual Computing, Introduction to Finance
-            </li>
-            <li>
-              <strong>Third year:</strong> Third Year Project, Advanced Computer Graphics, Organisations and Employment, Mathematical Topics in Machine Learning, Mathematical Systems &amp; Computation, Computer Vision, Managing Finance for Computer Scientists
-            </li>
-          </ul>
+            <p><strong>Course Units above First-Class level:</strong></p>
+            <ul>
+              <li>
+                <strong>First year:</strong> First Year Team Project, Mathematical Techniques for Computer Science, Data Science, Introduction to Programming
+              </li>
+              <li>
+                <strong>Second year:</strong> Logic and Modelling, Machine Learning, Introduction to Visual Computing, Introduction to Finance
+              </li>
+              <li>
+                <strong>Third year:</strong> Third Year Project, Advanced Computer Graphics, Organisations and Employment, Mathematical Topics in Machine Learning, Mathematical Systems &amp; Computation, Computer Vision, Managing Finance for Computer Scientists
+              </li>
+            </ul>
 
-          <p class="note">
-            <strong>Note:</strong> I started my undergraduate journey with almost 0 knowledge of computer science—I didn’t even know how to print “Hello, World.” After three years of hard work, I graduated with a First-Class Honours degree and a strong theoretical foundation in computer science.
-          </p>
+            <p class="note">
+              <strong>Note:</strong> I started my undergraduate journey with almost 0 knowledge of computer science—I didn’t even know how to print “Hello, World.” After three years of hard work, I graduated with a First-Class Honours degree and a strong theoretical foundation in computer science.
+            </p>
+          </div>
         </div>
-      </div>
+      </transition>
     </div>
   </section>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      showFirst: false,
+      showSecond: false,
+    };
+  },
+  mounted() {
+    setTimeout(() => {
+      this.showFirst = true;
+    }, 300);
+
+    setTimeout(() => {
+      this.showSecond = true;
+    }, 600);
+  },
+};
+</script>
 
 <style scoped>
 .education {
@@ -127,7 +151,7 @@
 }
 
 .timeline-item:nth-child(even) .timeline-content {
-  width: 800px;
+  width: 900px;
 }
 
 .timeline-item:nth-child(odd) .timeline-content {
@@ -188,6 +212,19 @@
   margin-top: 1rem;
   font-style: italic;
   color: #ccc;
+}
+
+/* Fade-in 过渡动画 */
+.fade-enter-active {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.fade-enter-from {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.fade-enter-to {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @media screen and (max-width: 768px) {
