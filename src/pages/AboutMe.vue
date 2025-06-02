@@ -9,8 +9,14 @@
           <img src="/my-photo.jpg" alt="My Photo" class="profile-photo" />
         </div>
         <div class="description">
-          <p>Computer Science student specializing in machine learning, with a focus on time-series forecasting and computer vision.</p>
-          <p>A self-motivated lifelong learner who loves exploring and applying cutting-edge technologies and knowledge.</p>
+          <p>
+            A Computer Science student specializing in machine learning, with a focus on
+            time-series forecasting and computer vision.
+          </p>
+          <p>
+            A self-motivated lifelong learner who loves exploring and applying cutting-edge
+            technologies and knowledge.
+          </p>
         </div>
       </div>
 
@@ -27,7 +33,10 @@
               >
                 <span class="skill-label">{{ skill.name }}</span>
                 <div class="bar">
-                  <div class="fill" :style="{ width: skill.percentage + '%' }"></div>
+                  <div
+                      class="fill"
+                      :style="{ width: animateSkills ? skill.percentage + '%' : '0%' }"
+                  ></div>
                 </div>
                 <span class="skill-percent">{{ skill.percentage }}%</span>
               </div>
@@ -43,7 +52,10 @@
               >
                 <span class="skill-label">{{ skill.name }}</span>
                 <div class="bar">
-                  <div class="fill" :style="{ width: skill.percentage + '%' }"></div>
+                  <div
+                      class="fill"
+                      :style="{ width: animateSkills ? skill.percentage + '%' : '0%' }"
+                  ></div>
                 </div>
                 <span class="skill-percent">{{ skill.percentage }}%</span>
               </div>
@@ -62,7 +74,10 @@
               >
                 <span class="skill-label">{{ skill.name }}</span>
                 <div class="bar">
-                  <div class="fill" :style="{ width: skill.percentage + '%' }"></div>
+                  <div
+                      class="fill"
+                      :style="{ width: animateSkills ? skill.percentage + '%' : '0%' }"
+                  ></div>
                 </div>
                 <span class="skill-percent">{{ skill.percentage }}%</span>
               </div>
@@ -78,7 +93,10 @@
               >
                 <span class="skill-label">{{ skill.name }}</span>
                 <div class="bar">
-                  <div class="fill" :style="{ width: skill.percentage + '%' }"></div>
+                  <div
+                      class="fill"
+                      :style="{ width: animateSkills ? skill.percentage + '%' : '0%' }"
+                  ></div>
                 </div>
                 <span class="skill-percent">{{ skill.percentage }}%</span>
               </div>
@@ -95,6 +113,7 @@ export default {
   name: "AboutMe",
   data() {
     return {
+      animateSkills: false,
       skillCategories: [
         {
           name: "Machine Learning",
@@ -139,6 +158,14 @@ export default {
       ],
     };
   },
+  mounted() {
+
+    this.$nextTick(() => {
+      setTimeout(() => {
+        this.animateSkills = true;
+      }, 100);
+    });
+  },
 };
 </script>
 
@@ -149,8 +176,11 @@ export default {
   background-color: #000000;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 2rem;
+  align-items: flex-start;
+
+  padding-top: 10vh;
+  padding-left: 2rem;
+  padding-right: 2rem;
   box-sizing: border-box;
 }
 
@@ -249,7 +279,7 @@ export default {
 
 /* Progress bar container */
 .bar {
-  flex: 5;
+  flex: 1;
   background-color: #333333;
   border-radius: 4px;
   margin: 0 0.75rem;
@@ -263,7 +293,7 @@ export default {
   background-color: #ffffff;
   width: 0;
   border-radius: 4px;
-
+  transition: width 1s ease-in-out;
 }
 
 @media (max-width: 800px) {
