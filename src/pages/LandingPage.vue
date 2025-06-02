@@ -4,13 +4,13 @@
     <MeltBall>
       <div class="text-block">
         <div class="line1">
-          <span class="font1">Hi, I AM </span>
-          <span class="font1-alt">ZIHAO ZENG</span>
+          <span class="font1">{{ $t('landing.line1.prefix') }} </span>
+          <span class="font1-alt">{{ $t('landing.line1.name') }}</span>
         </div>
 
         <div class="line2">
-          <span class="prefix">Hi, I AM </span>
-          <span class="font2">WELCOME TO MY PORTFOLIO</span>
+          <span class="prefix">{{ $t('landing.line2.prefix') }} </span>
+          <span class="font2">{{ $t('landing.line2.welcome') }}</span>
         </div>
       </div>
     </MeltBall>

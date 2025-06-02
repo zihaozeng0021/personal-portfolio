@@ -1,6 +1,23 @@
 <!-- src/App.vue -->
 <template>
   <div id="app" @click="onClick">
+    <div class="lang-switch">
+      <button
+          :class="['lang-btn', { active: $i18n.locale === 'en' }]"
+          @click.stop="setLocale('en')"
+      >
+        English
+      </button>
+
+      <button
+          :class="['lang-btn', { active: $i18n.locale === 'zh' }]"
+          @click.stop="setLocale('zh')"
+      >
+        简体中文
+      </button>
+
+    </div>
+
     <NavigationBar
         :current-page="currentPage"
         @update:page="handleNav"
@@ -49,11 +66,19 @@ export default {
     }
   },
   methods: {
+    setLocale(lang) {
+      this.$i18n.locale = lang
+    },
+
     isInteractive(el) {
-      return el && el.closest?.(
-          'a, button, input, textarea, select, [role="button"], [role="link"]'
+      return (
+          el &&
+          el.closest?.(
+              'a, button, input, textarea, select, [role="button"], [role="link"]'
+          )
       )
     },
+
     onClick(e) {
       if (e.target.closest('.nav')) return
 
@@ -63,10 +88,14 @@ export default {
       const half = window.innerHeight / 2
       if (clientY < half && this.currentPage > 0) {
         this.currentPage--
-      } else if (clientY >= half && this.currentPage < this.pages.length - 1) {
+      } else if (
+          clientY >= half &&
+          this.currentPage < this.pages.length - 1
+      ) {
         this.currentPage++
       }
     },
+
     handleNav(index) {
       this.currentPage = index
     },
@@ -92,5 +121,35 @@ body,
 .page {
   width: 100%;
   height: 100%;
+}
+
+.lang-switch {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  display: flex;
+  gap: 8px;
+  z-index: 1000;
+}
+
+.lang-btn {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.lang-btn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.lang-btn.active {
+  background-color: #fff;
+  color: #000;
 }
 </style>

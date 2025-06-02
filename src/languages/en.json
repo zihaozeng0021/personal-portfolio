@@ -1,0 +1,30 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "education": "Education",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+
+  "landing": {
+    "line1": {
+      "prefix": "Hi, I AM",
+      "name": "ZIHAO ZENG"
+    },
+    "line2": {
+      "prefix": "Hi, I AM",
+      "welcome": "WELCOME TO MY PORTFOLIO"
+    }
+  },
+
+  "contact": {
+    "thankYou": "Thank You for Visiting",
+    "invite": "If you’re interested in my work, feel free to reach out:",
+    "visitGitHub": "Visit GitHub",
+    "sendEmail": "Send Email"
+  }
+
+
+}

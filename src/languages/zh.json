@@ -1,0 +1,28 @@
+{
+  "nav": {
+    "home": "个人主页",
+    "about": "关于我",
+    "education": "教育背景",
+    "projects": "个人项目",
+    "experience": "工作经验",
+    "contact": "联系方式"
+  },
+
+  "landing": {
+    "line1": {
+      "prefix": "你好， 我是",
+      "name": "曾子昊"
+    },
+    "line2": {
+      "prefix": "你好， 我是",
+      "welcome": "欢迎来到我的作品集"
+    }
+  },
+
+  "contact": {
+    "thankYou": "感谢您的访问",
+    "invite": "如果您对我的工作感兴趣，请随时与我联系：",
+    "visitGitHub": "访问 GitHub",
+    "sendEmail": "发送 邮件"
+  }
+}

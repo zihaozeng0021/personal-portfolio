@@ -2,9 +2,9 @@
 <template>
   <section class="contact-page">
     <div class="contact-container">
-      <h1 class="thank-you">Thank You for Visiting</h1>
+      <h1 class="thank-you">{{ $t('contact.thankYou') }}</h1>
       <div class="divider"></div>
-      <p class="invite">If you’re interested in my work, feel free to reach out:</p>
+      <p class="invite">{{ $t('contact.invite') }}</p>
       <div class="links">
         <a
             class="link-button"
@@ -12,10 +12,10 @@
             target="_blank"
             rel="noopener noreferrer"
         >
-          Visit GitHub
+          {{ $t('contact.visitGitHub') }}
         </a>
         <a class="link-button" href="mailto:zihaozeng0021@gmail.com">
-          Send Email
+          {{ $t('contact.sendEmail') }}
         </a>
       </div>
     </div>
