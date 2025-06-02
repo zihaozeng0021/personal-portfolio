@@ -10,7 +10,7 @@
 
   "landing": {
     "line1": {
-      "prefix": "Hi, I AM",
+      "prefix": "Hi, I AM ",
       "name": "ZIHAO ZENG"
     },
     "line2": {
@@ -21,10 +21,23 @@
 
   "contact": {
     "thankYou": "Thank You for Visiting",
-    "invite": "If you’re interested in my work, feel free to reach out:",
+    "invite": "If you are interested in collaborating, please feel free to contact me:",
     "visitGitHub": "Visit GitHub",
     "sendEmail": "Send Email"
+  },
+
+  "about": {
+    "title": "About Me",
+    "intro": {
+      "p1": "A Computer Science student specializing in machine learning, with a focus on time-series forecasting and computer vision.",
+      "p2": "A self-motivated lifelong learner who loves exploring and applying cutting-edge technologies and knowledge."
+    },
+    "skills": {
+      "machineLearning": "Machine Learning",
+      "popularLibraries": "Popular Libraries & Frameworks",
+      "programmingLanguages": "Major Programming Languages",
+      "others": "Others",
+      "note": "The quantitative skill bars are subjective. For reference, this portfolio is written in Vue.js."
+    }
   }
-
-
 }

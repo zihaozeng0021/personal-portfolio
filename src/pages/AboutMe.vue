@@ -2,7 +2,7 @@
 <template>
   <section class="page about-me">
     <div class="content">
-      <h1 class="title">About Me</h1>
+      <h1 class="title">{{ $t('about.title') }}</h1>
 
       <div class="intro">
         <div class="photo-container">
@@ -10,12 +10,10 @@
         </div>
         <div class="description">
           <p>
-            A Computer Science student specializing in machine learning, with a focus on
-            time-series forecasting and computer vision.
+            {{ $t('about.intro.p1') }}
           </p>
           <p>
-            A self-motivated lifelong learner who loves exploring and applying cutting-edge
-            technologies and knowledge.
+            {{ $t('about.intro.p2') }}
           </p>
         </div>
       </div>
@@ -25,7 +23,7 @@
           <div class="column">
             <!-- Machine Learning -->
             <div class="skill-category">
-              <h2>Machine Learning</h2>
+              <h2>{{ $t('about.skills.machineLearning') }}</h2>
               <div
                   class="skill-item"
                   v-for="(skill, idx) in skillCategories[0].skills"
@@ -44,7 +42,7 @@
 
             <!-- Popular Libraries & Frameworks -->
             <div class="skill-category">
-              <h2>Popular Libraries &amp; Frameworks</h2>
+              <h2>{{ $t('about.skills.popularLibraries') }}</h2>
               <div
                   class="skill-item"
                   v-for="(skill, idx) in skillCategories[2].skills"
@@ -66,7 +64,7 @@
           <div class="column">
             <!-- Major Programming Languages -->
             <div class="skill-category">
-              <h2>Major Programming Languages</h2>
+              <h2>{{ $t('about.skills.programmingLanguages') }}</h2>
               <div
                   class="skill-item"
                   v-for="(skill, idx) in skillCategories[1].skills"
@@ -85,7 +83,7 @@
 
             <!-- Others -->
             <div class="skill-category">
-              <h2>Others</h2>
+              <h2>{{ $t('about.skills.others')}}</h2>
               <div
                   class="skill-item"
                   v-for="(skill, idx) in skillCategories[3].skills"
@@ -108,7 +106,7 @@
       <!-- Note added at the bottom -->
       <div class="note">
         <p class="note-text">
-          The quantitative skill bars are subjective. For reference, this portfolio is written in Vue.js.
+          {{ $t('about.skills.note') }}
         </p>
       </div>
     </div>

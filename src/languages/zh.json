@@ -15,14 +15,29 @@
     },
     "line2": {
       "prefix": "你好， 我是",
-      "welcome": "欢迎来到我的作品集"
+      "welcome": "欢迎来到我的个人主页"
     }
   },
 
   "contact": {
     "thankYou": "感谢您的访问",
-    "invite": "如果您对我的工作感兴趣，请随时与我联系：",
+    "invite": "如果您有合作意愿，请随时与我联系：",
     "visitGitHub": "访问 GitHub",
     "sendEmail": "发送 邮件"
+  },
+
+  "about": {
+    "title": "关于我",
+    "intro": {
+      "p1": "我是计算机科学专业的学生，专攻机器学习，尤其是时间序列预测和计算机视觉。",
+      "p2": "一个自我驱动的终身学习者，喜欢探索并应用最前沿的技术与知识。"
+    },
+    "skills": {
+      "machineLearning": "机器学习",
+      "popularLibraries": "常见库与框架",
+      "programmingLanguages": "主要编程语言",
+      "others": "其他",
+      "note": "这些技能栏的定量展示具有主观性，作为参考，此个人主页使用 Vue.js 编写。"
+    }
   }
 }
