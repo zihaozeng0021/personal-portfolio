@@ -39,5 +39,37 @@
       "others": "其他",
       "note": "这些技能栏的定量展示具有主观性，作为参考，此个人主页使用 Vue.js 编写。"
     }
+  },
+
+  "education": {
+    "title": "教育背景",
+    "entries": [
+      {
+        "institution": "Into Manchester，曼彻斯特，英国",
+        "dateRange": "2022年1月 – 2022年7月",
+        "degree": "A-level",
+        "courseUnitsLabel": "课程单元：",
+        "courseUnits": "物理 | 数学 | 进阶数学",
+        "gradeLabel": "成绩：",
+        "gradeText": "我的 A-level 所有课程都获得了 A*，仅用 7 个月时间学完，在英国考试的考生中位于",
+        "topFivePercent": "前 5%"
+      },
+      {
+        "institution": "曼彻斯特大学，曼彻斯特，英格兰",
+        "dateRange": "2022年9月 – 2025年7月",
+        "degree": "计算机科学（荣誉）理学士",
+        "gradeLabel": "成绩：",
+        "gradeText": "荣誉一等学位",
+        "courseUnitsAboveLabel": "高于一等水平的课程单元：",
+        "firstYear": "第一学年：",
+        "secondYear": "第二学年：",
+        "thirdYear": "第三学年：",
+        "firstYearUnit": "一年级团队项目，计算机科学数学技巧，数据科学，编程导论",
+        "secondYearUnit": "逻辑学与逻辑建模，机器学习，视觉计算导论，金融学导论",
+        "thirdYearUnit": "三年级个人项目，高级计算机图形学，组织与就业，机器学习的数学专题，数学系统与计算，计算机视觉，计算机科学家的金融管理",
+        "noteLabel": "备注：",
+        "noteText": "我的本科之旅从几乎零计算机科学基础开始——当时我甚至不知道如何打印“Hello, World”。经过三年的努力，我以一等荣誉学位毕业，并拥有了扎实的计算机科学理论基础。"
+      }
+    ]
   }
 }

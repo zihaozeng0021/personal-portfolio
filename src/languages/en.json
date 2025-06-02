@@ -39,5 +39,37 @@
       "others": "Others",
       "note": "The quantitative skill bars are subjective. For reference, this portfolio is written in Vue.js."
     }
+  },
+
+  "education": {
+    "title": "Educational Background",
+    "entries": [
+      {
+        "institution": "Into Manchester, Manchester, England",
+        "dateRange": "January 2022 – July 2022",
+        "degree": "A-level",
+        "courseUnitsLabel": "Course Units:",
+        "courseUnits": "Physics | Mathematics | Further Maths",
+        "gradeLabel": "Grade:",
+        "gradeText": "All A* in my A-level courses, which took me only 7 months to achieve, placing me in the",
+        "topFivePercent": "top 5%"
+      },
+      {
+        "institution": "University of Manchester, Manchester, England",
+        "dateRange": "September 2022 – July 2025",
+        "degree": "BSc (Hons) Computer Science",
+        "gradeLabel": "Grade:",
+        "gradeText": "First Class Honors",
+        "courseUnitsAboveLabel": "Course Units above First-Class level:",
+        "firstYear": "First Year: ",
+        "secondYear": "Second Year: ",
+        "thirdYear": "Third Year: ",
+        "firstYearUnit": "First Year Team Project | Mathematical Techniques for Computer Science | Data Science | Introduction to Programming",
+        "secondYearUnit": "Logic and Modelling | Machine Learning | Introduction to Visual Computing | Introduction to Finance",
+        "thirdYearUnit": "Third Year Project | Advanced Computer Graphics | Organisations and Employment | Mathematical Topics in Machine Learning | Mathematical Systems & Computation | Computer Vision | Managing Finance for Computer Scientists",
+        "noteLabel": "Note:",
+        "noteText": "I started my undergraduate journey with almost 0 knowledge of computer science—I didn’t even know how to print “Hello, World.” After three years of hard work, I graduated with a First-Class Honours degree and a strong theoretical foundation in computer science."
+      }
+    ]
   }
 }
