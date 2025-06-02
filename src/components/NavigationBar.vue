@@ -1,3 +1,4 @@
+<!-- src/components/NavigationBar.vue -->
 <template>
   <nav class="nav">
     <ul>
@@ -6,7 +7,7 @@
             @click.prevent="navigate(i)"
             :class="{ active: currentPage === i }"
         >
-          {{ item }}
+          {{ $t(item) }}
         </button>
       </li>
     </ul>
@@ -17,7 +18,6 @@
 export default {
   name: "NavigationBar",
   props: {
-
     currentPage: {
       type: Number,
       required: true,
@@ -27,12 +27,12 @@ export default {
   data() {
     return {
       navItems: [
-        "Home",
-        "About",
-        "Education",
-        "Projects",
-        "Experience",
-        "Contact",
+        "nav.home",
+        "nav.about",
+        "nav.education",
+        "nav.projects",
+        "nav.experience",
+        "nav.contact",
       ],
     };
   },

@@ -1,10 +1,11 @@
+<!-- src/pages/WorkExperience.vue -->
 <template>
   <section class="work-experience">
     <div class="container">
-      <h1 class="title">Work Experience</h1>
+      <h1 class="title">{{ $t('experience.title') }}</h1>
       <div class="divider"></div>
       <p class="subtitle">
-        I have just graduated with my bachelor’s degree and currently do not have formal work experience Ծ‸Ծ.
+        {{ $t('experience.description') }}
       </p>
     </div>
   </section>

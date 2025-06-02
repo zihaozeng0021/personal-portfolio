@@ -1,0 +1,99 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "education": "Education",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+
+  "landing": {
+    "line1": {
+      "prefix": "Hi, I AM ",
+      "name": "ZIHAO ZENG"
+    },
+    "line2": {
+      "prefix": "Hi, I AM",
+      "welcome": "WELCOME TO MY PORTFOLIO"
+    }
+  },
+
+  "contact": {
+    "thankYou": "Thank You for Visiting",
+    "invite": "If you are interested in collaborating, please feel free to contact me:",
+    "visitGitHub": "Visit GitHub",
+    "sendEmail": "Send Email"
+  },
+
+  "about": {
+    "title": "About Me",
+    "intro": {
+      "p1": "A Computer Science student specializing in machine learning, with a focus on time-series forecasting and computer vision.",
+      "p2": "A self-motivated lifelong learner who loves exploring and applying cutting-edge technologies and knowledge."
+    },
+    "skills": {
+      "machineLearning": "Machine Learning",
+      "popularLibraries": "Popular Libraries & Frameworks",
+      "programmingLanguages": "Major Programming Languages",
+      "others": "Others",
+      "note": "The quantitative display of these skill bars is subjective. This portfolio is written in Vue.js. The corresponding skill bar of vue.js is 30% can serve as a reference standard."
+    }
+  },
+
+  "education": {
+    "title": "Educational Background",
+    "entries": [
+      {
+        "institution": "Into Manchester, Manchester, England",
+        "dateRange": "January 2022 – July 2022",
+        "degree": "A-level",
+        "courseUnitsLabel": "Course Units:",
+        "courseUnits": "Physics | Mathematics | Further Maths",
+        "gradeLabel": "Grade:",
+        "gradeText": "All A* in my A-level courses, which took me only 7 months to achieve, placing me in the",
+        "topFivePercent": "top 5%"
+      },
+      {
+        "institution": "University of Manchester, Manchester, England",
+        "dateRange": "September 2022 – July 2025",
+        "degree": "BSc (Hons) Computer Science",
+        "gradeLabel": "Grade:",
+        "gradeText": "First Class Honors",
+        "courseUnitsAboveLabel": "Course Units above First-Class level:",
+        "firstYear": "First Year: ",
+        "secondYear": "Second Year: ",
+        "thirdYear": "Third Year: ",
+        "firstYearUnit": "First Year Team Project | Mathematical Techniques for Computer Science | Data Science | Introduction to Programming",
+        "secondYearUnit": "Logic and Modelling | Machine Learning | Introduction to Visual Computing | Introduction to Finance",
+        "thirdYearUnit": "Third Year Project | Advanced Computer Graphics | Organisations and Employment | Mathematical Topics in Machine Learning | Mathematical Systems & Computation | Computer Vision | Managing Finance for Computer Scientists",
+        "noteLabel": "Note:",
+        "noteText": "I started my undergraduate journey with almost 0 knowledge of computer science—I didn’t even know how to print “Hello, World.” After three years of hard work, I graduated with a First-Class Honours degree and a strong theoretical foundation in computer science."
+      }
+    ]
+  },
+
+  "projects": {
+    "title": "Personal Projects (To be continued)",
+    "entries": [
+    {
+      "name": "Project Name 1",
+      "description": "This is a placeholder description for Project 1. Briefly describe what this project does or its purpose."
+    },
+    {
+      "name": "Project Name 2",
+      "description": "This is a placeholder description for Project 2. Briefly describe what this project does or its purpose."
+    },
+    {
+      "name": "Project Name 3",
+      "description": "This is a placeholder description for Project 3. Briefly describe what this project does or its purpose."
+    }],
+    "demo": "Demo",
+    "code": "Code"
+  },
+
+  "experience": {
+    "title": "Work Experience",
+    "description": "I have just graduated with my bachelor’s degree and currently do not have formal work experience Ծ‸Ծ."
+  }
+}

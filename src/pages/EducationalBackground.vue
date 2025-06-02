@@ -1,24 +1,29 @@
 <!-- src/pages/EducationalBackground.vue -->
 <template>
   <section class="education">
-    <h1>Educational Background</h1>
+    <h1>{{ $t('education.title') }}</h1>
+
     <div class="timeline">
       <!-- Entry 1: Into Manchester -->
       <transition name="fade">
         <div v-if="showFirst" class="timeline-item">
           <div class="timeline-content">
-            <h2>Into Manchester, Manchester, England</h2>
-            <span class="date">January 2022 – July 2022</span>
-            <h3>A-level</h3>
-            <p><strong>Course Units:</strong> Physics | Mathematics | Further Maths</p>
+            <h2>{{ $t('education.entries[0].institution') }}</h2>
+            <span class="date">{{ $t('education.entries[0].dateRange') }}</span>
+            <h3>{{ $t('education.entries[0].degree') }}</h3>
             <p>
-              <strong>Grade:</strong> All A* in my A-level courses, which took me only 7 months to achieve, placing me in the
+              <strong>{{ $t('education.entries[0].courseUnitsLabel') }}</strong>
+              {{ $t('education.entries[0].courseUnits') }}
+            </p>
+            <p>
+              <strong>{{ $t('education.entries[0].gradeLabel') }}</strong>
+              {{ $t('education.entries[0].gradeText') }}
               <a
                   href="https://www.gov.uk/government/publications/infographic-a-level-results-2022/infographics-for-a-level-results-2022-accessible"
                   target="_blank"
                   rel="noopener"
               >
-                top 5%
+                {{ $t('education.entries[0].topFivePercent') }}
               </a>
               .
             </p>
@@ -30,26 +35,30 @@
       <transition name="fade">
         <div v-if="showSecond" class="timeline-item">
           <div class="timeline-content">
-            <h2>University of Manchester, Manchester, England</h2>
-            <span class="date">September 2022 – July 2025</span>
-            <h3>BSc (Hons) Computer Science</h3>
-            <p><strong>Grade:</strong> First Class Honors</p>
-
-            <p><strong>Course Units above First-Class level:</strong></p>
+            <h2>{{ $t('education.entries[1].institution') }}</h2>
+            <span class="date">{{ $t('education.entries[1].dateRange') }}</span>
+            <h3>{{ $t('education.entries[1].degree') }}</h3>
+            <p>
+              <strong>{{ $t('education.entries[1].gradeLabel') }}</strong>
+              {{ $t('education.entries[1].gradeText') }}
+            </p>
+            <p>
+              <strong>{{ $t('education.entries[1].courseUnitsAboveLabel') }}</strong>
+            </p>
             <ul>
               <li>
-                <strong>First year:</strong> First Year Team Project | Mathematical Techniques for Computer Science | Data Science | Introduction to Programming
+                <strong>{{ $t('education.entries[1].firstYear') }}</strong> {{ $t('education.entries[1].firstYearUnit') }}
               </li>
               <li>
-                <strong>Second year:</strong> Logic and Modelling | Machine Learning | Introduction to Visual Computing | Introduction to Finance
+                <strong>{{ $t('education.entries[1].secondYear') }}</strong> {{ $t('education.entries[1].secondYearUnit') }}
               </li>
               <li>
-                <strong>Third year:</strong> Third Year Project | Advanced Computer Graphics | Organisations and Employment | Mathematical Topics in Machine Learning | Mathematical Systems &amp; Computation | Computer Vision | Managing Finance for Computer Scientists
+                <strong>{{ $t('education.entries[1].thirdYear') }}</strong> {{ $t('education.entries[1].thirdYearUnit') }}
               </li>
             </ul>
-
             <p class="note">
-              <strong>Note:</strong> I started my undergraduate journey with almost 0 knowledge of computer science—I didn’t even know how to print “Hello, World.” After three years of hard work, I graduated with a First-Class Honours degree and a strong theoretical foundation in computer science.
+              <strong>{{ $t('education.entries[1].noteLabel') }}</strong>
+              {{ $t('education.entries[1].noteText') }}
             </p>
           </div>
         </div>
