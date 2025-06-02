@@ -1,95 +1,93 @@
 <!-- src/pages/AboutMe.vue -->
 <template>
-  <transition name="fade" appear>
-    <section class="page about-me">
-      <div class="content">
-        <h1 class="title">About Me</h1>
+  <section class="page about-me">
+    <div class="content">
+      <h1 class="title">About Me</h1>
 
-        <div class="intro">
-          <div class="photo-container">
-            <img src="/my-photo.jpg" alt="My Photo" class="profile-photo" />
-          </div>
-          <div class="description">
-            <p>Computer Science student specializing in machine learning, with a focus on time-series forecasting and computer vision.</p>
-            <p>A self-motivated lifelong learner who loves exploring and applying cutting-edge technologies and knowledge.</p>
-          </div>
+      <div class="intro">
+        <div class="photo-container">
+          <img src="/my-photo.jpg" alt="My Photo" class="profile-photo" />
         </div>
+        <div class="description">
+          <p>Computer Science student specializing in machine learning, with a focus on time-series forecasting and computer vision.</p>
+          <p>A self-motivated lifelong learner who loves exploring and applying cutting-edge technologies and knowledge.</p>
+        </div>
+      </div>
 
-        <div class="skills">
-          <div class="columns">
-            <div class="column">
-              <!-- Machine Learning -->
-              <div class="skill-category">
-                <h2>Machine Learning</h2>
-                <div
-                    class="skill-item"
-                    v-for="(skill, idx) in skillCategories[0].skills"
-                    :key="`ml-${idx}`"
-                >
-                  <span class="skill-label">{{ skill.name }}</span>
-                  <div class="bar">
-                    <div class="fill" :style="{ width: skill.percentage + '%' }"></div>
-                  </div>
-                  <span class="skill-percent">{{ skill.percentage }}%</span>
+      <div class="skills">
+        <div class="columns">
+          <div class="column">
+            <!-- Machine Learning -->
+            <div class="skill-category">
+              <h2>Machine Learning</h2>
+              <div
+                  class="skill-item"
+                  v-for="(skill, idx) in skillCategories[0].skills"
+                  :key="`ml-${idx}`"
+              >
+                <span class="skill-label">{{ skill.name }}</span>
+                <div class="bar">
+                  <div class="fill" :style="{ width: skill.percentage + '%' }"></div>
                 </div>
-              </div>
-
-              <!-- Popular Libraries & Frameworks -->
-              <div class="skill-category">
-                <h2>Popular Libraries &amp; Frameworks</h2>
-                <div
-                    class="skill-item"
-                    v-for="(skill, idx) in skillCategories[2].skills"
-                    :key="`lib-${idx}`"
-                >
-                  <span class="skill-label">{{ skill.name }}</span>
-                  <div class="bar">
-                    <div class="fill" :style="{ width: skill.percentage + '%' }"></div>
-                  </div>
-                  <span class="skill-percent">{{ skill.percentage }}%</span>
-                </div>
+                <span class="skill-percent">{{ skill.percentage }}%</span>
               </div>
             </div>
 
-            <!-- Column 2: Major Programming Languages & Others -->
-            <div class="column">
-              <!-- Major Programming Languages -->
-              <div class="skill-category">
-                <h2>Major Programming Languages</h2>
-                <div
-                    class="skill-item"
-                    v-for="(skill, idx) in skillCategories[1].skills"
-                    :key="`lang-${idx}`"
-                >
-                  <span class="skill-label">{{ skill.name }}</span>
-                  <div class="bar">
-                    <div class="fill" :style="{ width: skill.percentage + '%' }"></div>
-                  </div>
-                  <span class="skill-percent">{{ skill.percentage }}%</span>
+            <!-- Popular Libraries & Frameworks -->
+            <div class="skill-category">
+              <h2>Popular Libraries &amp; Frameworks</h2>
+              <div
+                  class="skill-item"
+                  v-for="(skill, idx) in skillCategories[2].skills"
+                  :key="`lib-${idx}`"
+              >
+                <span class="skill-label">{{ skill.name }}</span>
+                <div class="bar">
+                  <div class="fill" :style="{ width: skill.percentage + '%' }"></div>
                 </div>
+                <span class="skill-percent">{{ skill.percentage }}%</span>
               </div>
+            </div>
+          </div>
 
-              <!-- Others -->
-              <div class="skill-category">
-                <h2>Others</h2>
-                <div
-                    class="skill-item"
-                    v-for="(skill, idx) in skillCategories[3].skills"
-                    :key="`other-${idx}`"
-                >
-                  <span class="skill-label">{{ skill.name }}</span>
-                  <div class="bar">
-                    <div class="fill" :style="{ width: skill.percentage + '%' }"></div>
-                  </div>
-                  <span class="skill-percent">{{ skill.percentage }}%</span>
+          <!-- Column 2: Major Programming Languages & Others -->
+          <div class="column">
+            <!-- Major Programming Languages -->
+            <div class="skill-category">
+              <h2>Major Programming Languages</h2>
+              <div
+                  class="skill-item"
+                  v-for="(skill, idx) in skillCategories[1].skills"
+                  :key="`lang-${idx}`"
+              >
+                <span class="skill-label">{{ skill.name }}</span>
+                <div class="bar">
+                  <div class="fill" :style="{ width: skill.percentage + '%' }"></div>
                 </div>
+                <span class="skill-percent">{{ skill.percentage }}%</span>
+              </div>
+            </div>
+
+            <!-- Others -->
+            <div class="skill-category">
+              <h2>Others</h2>
+              <div
+                  class="skill-item"
+                  v-for="(skill, idx) in skillCategories[3].skills"
+                  :key="`other-${idx}`"
+              >
+                <span class="skill-label">{{ skill.name }}</span>
+                <div class="bar">
+                  <div class="fill" :style="{ width: skill.percentage + '%' }"></div>
+                </div>
+                <span class="skill-percent">{{ skill.percentage }}%</span>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  </transition>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -148,7 +146,7 @@ export default {
 .about-me {
   height: 100vh;
   width: 100vw;
-  background-color: #c8e6c9; /* 绿色调 */
+  background-color: #000000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -166,7 +164,7 @@ export default {
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
   text-align: center;
-  color: #2e7d32;
+  color: #ffffff;
 }
 
 /* Introduction: avatar left, text right */
@@ -187,7 +185,7 @@ export default {
   border-radius: 50%;
   object-fit: cover;
   object-position: center top;
-  border: 4px solid #388e3c;
+  border: 4px solid #ffffff;
 }
 
 /* Description styling */
@@ -198,7 +196,7 @@ export default {
 .description p {
   font-size: 1.125rem;
   margin: 0.5rem 0;
-  color: #1b5e20;
+  color: #ffffff;
 }
 
 /* Skills Section */
@@ -226,7 +224,7 @@ export default {
 .skill-category h2 {
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
-  color: #33691e;
+  color: #ffffff;
 }
 
 /* Individual skill bar */
@@ -239,20 +237,20 @@ export default {
 .skill-label {
   flex: 2;
   font-size: 1rem;
-  color: #2e7d32;
+  color: #ffffff;
 }
 
 .skill-percent {
   flex: 0 0 2rem;
   font-size: 0.9rem;
-  color: #2e7d32;
+  color: #ffffff;
   text-align: right;
 }
 
 /* Progress bar container */
 .bar {
   flex: 5;
-  background-color: #e0e0e0;
+  background-color: #333333;
   border-radius: 4px;
   margin: 0 0.75rem;
   height: 10px;
@@ -262,34 +260,10 @@ export default {
 /* Filled portion */
 .fill {
   height: 100%;
-  background-color: #388e3c;
+  background-color: #ffffff;
   width: 0;
   border-radius: 4px;
-  transition: width 1.2s ease-in-out;
-}
 
-/* Fade‐in transition */
-.fade-enter-active {
-  animation: fadeIn 0.8s ease-out;
-}
-.fade-enter-from {
-  opacity: 0;
-  transform: translateY(20px);
-}
-.fade-enter-to {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 @media (max-width: 800px) {
