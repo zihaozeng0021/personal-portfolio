@@ -10,7 +10,7 @@
             <h2>Into Manchester, Manchester, England</h2>
             <span class="date">January 2022 – July 2022</span>
             <h3>A-level</h3>
-            <p><strong>Course Units:</strong> Physics, Mathematics, Further Maths</p>
+            <p><strong>Course Units:</strong> Physics | Mathematics | Further Maths</p>
             <p>
               <strong>Grade:</strong> All A* in my A-level courses, which took me only 7 months to achieve, placing me in the
               <a
@@ -38,13 +38,13 @@
             <p><strong>Course Units above First-Class level:</strong></p>
             <ul>
               <li>
-                <strong>First year:</strong> First Year Team Project, Mathematical Techniques for Computer Science, Data Science, Introduction to Programming
+                <strong>First year:</strong> First Year Team Project | Mathematical Techniques for Computer Science | Data Science | Introduction to Programming
               </li>
               <li>
-                <strong>Second year:</strong> Logic and Modelling, Machine Learning, Introduction to Visual Computing, Introduction to Finance
+                <strong>Second year:</strong> Logic and Modelling | Machine Learning | Introduction to Visual Computing | Introduction to Finance
               </li>
               <li>
-                <strong>Third year:</strong> Third Year Project, Advanced Computer Graphics, Organisations and Employment, Mathematical Topics in Machine Learning, Mathematical Systems &amp; Computation, Computer Vision, Managing Finance for Computer Scientists
+                <strong>Third year:</strong> Third Year Project | Advanced Computer Graphics | Organisations and Employment | Mathematical Topics in Machine Learning | Mathematical Systems &amp; Computation | Computer Vision | Managing Finance for Computer Scientists
               </li>
             </ul>
 
@@ -127,6 +127,7 @@ export default {
   align-items: center;
 }
 
+/* the dot */
 .timeline-item::before {
   content: "";
   position: absolute;
@@ -136,16 +137,17 @@ export default {
   background: #000;
   border: 3px solid #0bc9cd;
   top: 50%;
-  left: 50%;
+  left: 45%;
   transform: translate(-50%, -50%);
 }
 
+/* Card styling */
 .timeline-content {
   background: #1e1e1e;
   padding: 1.5rem;
   border-radius: 8px;
   position: absolute;
-  left: 50%;
+  left: 45%;
   width: 500px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
@@ -214,7 +216,7 @@ export default {
   color: #ccc;
 }
 
-/* Fade-in 过渡动画 */
+/* Fade-in transition */
 .fade-enter-active {
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
