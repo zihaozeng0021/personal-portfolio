@@ -11,7 +11,8 @@ import LandingPage from './pages/LandingPage.vue'
 import AboutMe from './pages/AboutMe.vue'
 import EducationalBackground from './pages/EducationalBackground.vue'
 import PersonalProjects from './pages/PersonalProjects.vue'
-import TheEnd from './pages/TheEnd.vue'
+import WorkExperience from './pages/WorkExperience.vue'
+import ContactMe from './pages/ContactMe.vue'
 
 export default {
   name: 'App',
@@ -21,7 +22,8 @@ export default {
     AboutMe,
     EducationalBackground,
     PersonalProjects,
-    TheEnd
+    WorkExperience,
+    ContactMe,
   },
   data() {
     return {
@@ -30,7 +32,8 @@ export default {
         'AboutMe',
         'EducationalBackground',
         'PersonalProjects',
-        'TheEnd'
+        'WorkExperience',
+        'ContactMe'
       ],
       currentPage: 0
     }

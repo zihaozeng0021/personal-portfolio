@@ -1,7 +1,7 @@
-< !-- src/pages/TheEnd.vue -->
+< !-- src/pages/ContactMe.vue -->
 <template>
   <section class="page the-end">
-    <h1>The End</h1>
+    <h1>Contact Me (To be continued)</h1>
   </section>
 </template>
 
@@ -9,7 +9,7 @@
 .the-end {
   height: 100vh;
   width: 100vw;
-  background-color: #FFF9C4; /* 黄色调 */
+  background-color: #FFF9C4;
   display: flex;
   justify-content: center;
   align-items: center;
