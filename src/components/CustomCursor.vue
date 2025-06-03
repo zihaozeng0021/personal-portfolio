@@ -19,7 +19,7 @@ export default {
     document.body.style.cursor = 'none'
     window.addEventListener('mousemove', this.handleMove)
   },
-  beforeDestroy() {
+  beforeUnmount() {
     document.body.style.cursor = ''
     window.removeEventListener('mousemove', this.handleMove)
   },
@@ -30,11 +30,15 @@ export default {
       )
     },
     handleMove(e) {
+      const cursorEl = this.$refs.cursor
+      if (!cursorEl) {
+        return
+      }
+
       const { clientX, clientY } = e
       this.direction =
           clientY < window.innerHeight / 2 ? 'up' : 'down'
 
-      const cursorEl = this.$refs.cursor
       cursorEl.style.transform = `translate3d(${clientX}px, ${clientY}px, 0)`
 
       if (this.isInteractive(e.target)) {
@@ -55,7 +59,7 @@ export default {
   width: 0;
   height: 0;
   pointer-events: none;
-  z-index: 1;
+  z-index: 9999;
   transition: transform 0.01s linear,
   opacity   0.1s ease;
 }

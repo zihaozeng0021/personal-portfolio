@@ -1,6 +1,12 @@
 <!-- src/App.vue -->
 <template>
-  <div id="app" @click="onClick">
+  <div
+      id="app"
+      :class="{ 'is-mobile': isMobileOrTablet }"
+      @click="onClick"
+      @touchstart="onTouchStart"
+      @touchend="onTouchEnd"
+  >
     <div class="lang-switch">
       <button
           :class="['lang-btn', { active: $i18n.locale === 'en' }]"
@@ -15,7 +21,6 @@
       >
         简体中文
       </button>
-
     </div>
 
     <NavigationBar
@@ -23,7 +28,7 @@
         @update:page="handleNav"
     />
 
-    <CustomCursor />
+    <CustomCursor v-if="!isMobileOrTablet" />
 
     <component :is="pages[currentPage]" class="page" />
   </div>
@@ -63,11 +68,29 @@ export default {
         'ContactMe',
       ],
       currentPage: 0,
+      isMobileOrTablet: false,
+      touchStartY: 0,
+      touchEndY: 0,
+      swipeThreshold: 50,
+      mobileBreakpoint: 768,
     }
+  },
+  mounted() {
+    this.checkIsMobileOrTablet()
+
+    window.addEventListener('resize', this.checkIsMobileOrTablet)
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.checkIsMobileOrTablet)
   },
   methods: {
     setLocale(lang) {
       this.$i18n.locale = lang
+    },
+
+    checkIsMobileOrTablet() {
+      this.isMobileOrTablet =
+          window.innerWidth <= this.mobileBreakpoint
     },
 
     isInteractive(el) {
@@ -80,12 +103,17 @@ export default {
     },
 
     onClick(e) {
+      if (this.isMobileOrTablet) {
+        return
+      }
+
       if (e.target.closest('.nav')) return
 
       if (this.isInteractive(e.target)) return
 
       const { clientY } = e
       const half = window.innerHeight / 2
+
       if (clientY < half && this.currentPage > 0) {
         this.currentPage--
       } else if (
@@ -93,6 +121,32 @@ export default {
           this.currentPage < this.pages.length - 1
       ) {
         this.currentPage++
+      }
+    },
+
+    onTouchStart(e) {
+      if (!this.isMobileOrTablet) return
+      this.touchStartY = e.changedTouches[0].clientY
+    },
+
+    onTouchEnd(e) {
+      if (!this.isMobileOrTablet) return
+      this.touchEndY = e.changedTouches[0].clientY
+      this.handleSwipe()
+    },
+
+    handleSwipe() {
+      const deltaY = this.touchStartY - this.touchEndY
+
+      if (deltaY > this.swipeThreshold) {
+        if (this.currentPage < this.pages.length - 1) {
+          this.currentPage++
+        }
+      }
+      else if (deltaY < -this.swipeThreshold) {
+        if (this.currentPage > 0) {
+          this.currentPage--
+        }
       }
     },
 
@@ -151,5 +205,10 @@ body,
 .lang-btn.active {
   background-color: #fff;
   color: #000;
+}
+
+
+.is-mobile {
+  cursor: default;
 }
 </style>
