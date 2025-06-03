@@ -10,7 +10,7 @@
       <slot></slot>
     </div>
 
-    <div class="center-ball"></div>
+    <div class="center-ball" :style="mainBallStyle"></div>
 
     <div
         class="smaller-ball"
@@ -20,20 +20,38 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 
 const container = ref(null)
 
 const offsetX = ref(0)
 const offsetY = ref(0)
 const smallerBallSize = ref(0)
-
 const mainBallDiameter = ref(0)
-onMounted(() => {
-  mainBallDiameter.value = window.innerHeight * 0.6
+
+function recalcSizes() {
+  const vh = window.innerHeight
+  const vw = window.innerWidth
+
+
+  let factor = 0.6
+  if (vw >= 2560) {
+    factor = 0.8
+  } else if (vw <= 1200) {
+    factor = 0.4
+  }
+
+  mainBallDiameter.value = vh * factor
   smallerBallSize.value = mainBallDiameter.value * 0.3
-  offsetX.value = 0
-  offsetY.value = 0
+}
+
+onMounted(() => {
+  recalcSizes()
+  window.addEventListener('resize', recalcSizes)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', recalcSizes)
 })
 
 function handleMouseMove(event) {
@@ -45,14 +63,11 @@ function handleMouseMove(event) {
 
   const dx = event.clientX - centerX
   const dy = event.clientY - centerY
-
   const distance = Math.hypot(dx, dy) || 1
 
   const mainRadiusPx = mainBallDiameter.value / 2
   const maxRadius = Math.min(rect.width, rect.height) / 2
   const norm = Math.min(distance / maxRadius, 1)
-
-  smallerBallSize.value = mainBallDiameter.value * 0.3
 
   const c = 0.7
   const offsetDistance = mainRadiusPx * norm * c
@@ -72,6 +87,14 @@ const smallerBallStyle = computed(() => {
     width: `${smallerBallSize.value}px`,
     height: `${smallerBallSize.value}px`,
     transform: `translate(-50%, -50%) translate(${offsetX.value}px, ${offsetY.value}px)`,
+  }
+})
+
+const mainBallStyle = computed(() => {
+  return {
+    width: `${mainBallDiameter.value}px`,
+    height: `${mainBallDiameter.value}px`,
+    transform: 'translate(-50%, -50%)',
   }
 })
 </script>
@@ -98,9 +121,6 @@ const smallerBallStyle = computed(() => {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
-  width: 60vh;
-  height: 60vh;
   border-radius: 50%;
   background-color: #fff;
   mix-blend-mode: difference;
