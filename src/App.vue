@@ -25,6 +25,7 @@
 
     <NavigationBar
         :current-page="currentPage"
+        :is-mobile="isMobileOrTablet"
         @update:page="handleNav"
     />
 
@@ -77,7 +78,6 @@ export default {
   },
   mounted() {
     this.checkIsMobileOrTablet()
-
     window.addEventListener('resize', this.checkIsMobileOrTablet)
   },
   beforeDestroy() {
@@ -89,8 +89,7 @@ export default {
     },
 
     checkIsMobileOrTablet() {
-      this.isMobileOrTablet =
-          window.innerWidth <= this.mobileBreakpoint
+      this.isMobileOrTablet = window.innerWidth <= this.mobileBreakpoint
     },
 
     isInteractive(el) {
@@ -103,12 +102,8 @@ export default {
     },
 
     onClick(e) {
-      if (this.isMobileOrTablet) {
-        return
-      }
-
+      if (this.isMobileOrTablet) return
       if (e.target.closest('.nav')) return
-
       if (this.isInteractive(e.target)) return
 
       const { clientY } = e
@@ -137,13 +132,11 @@ export default {
 
     handleSwipe() {
       const deltaY = this.touchStartY - this.touchEndY
-
       if (deltaY > this.swipeThreshold) {
         if (this.currentPage < this.pages.length - 1) {
           this.currentPage++
         }
-      }
-      else if (deltaY < -this.swipeThreshold) {
+      } else if (deltaY < -this.swipeThreshold) {
         if (this.currentPage > 0) {
           this.currentPage--
         }
@@ -207,8 +200,19 @@ body,
   color: #000;
 }
 
-
 .is-mobile {
   cursor: default;
+}
+
+/* ========== Large-screen styles (>=2560px) ========== */
+@media (min-width: 2560px) {
+  .lang-btn {
+    font-size: 1.8rem;
+    padding: 8px 16px;
+  }
+
+  .nav button {
+    font-size: 28px !important;
+  }
 }
 </style>
