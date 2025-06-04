@@ -4,8 +4,6 @@
       id="app"
       :class="{ 'is-mobile': isMobileOrTablet }"
       @click="onClick"
-      @touchstart="onTouchStart"
-      @touchend="onTouchEnd"
   >
     <div class="lang-switch">
       <button
@@ -14,7 +12,6 @@
       >
         English
       </button>
-
       <button
           :class="['lang-btn', { active: $i18n.locale === 'zh' }]"
           @click.stop="setLocale('zh')"
@@ -31,7 +28,19 @@
 
     <CustomCursor v-if="!isMobileOrTablet" />
 
-    <component :is="pages[currentPage]" class="page" />
+    <div v-if="isMobileOrTablet" class="pages-container">
+      <component
+          v-for="(pageName, index) in pages"
+          :key="index"
+          :is="pageName"
+          class="page"
+      />
+    </div>
+    <component
+        v-else
+        :is="pages[currentPage]"
+        class="page"
+    />
   </div>
 </template>
 
@@ -70,9 +79,6 @@ export default {
       ],
       currentPage: 0,
       isMobileOrTablet: false,
-      touchStartY: 0,
-      touchEndY: 0,
-      swipeThreshold: 50,
       mobileBreakpoint: 768,
     }
   },
@@ -87,62 +93,32 @@ export default {
     setLocale(lang) {
       this.$i18n.locale = lang
     },
-
     checkIsMobileOrTablet() {
       this.isMobileOrTablet = window.innerWidth <= this.mobileBreakpoint
     },
-
-    isInteractive(el) {
-      return (
-          el &&
-          el.closest?.(
-              'a, button, input, textarea, select, [role="button"], [role="link"]'
-          )
-      )
-    },
-
     onClick(e) {
       if (this.isMobileOrTablet) return
+
       if (e.target.closest('.nav')) return
-      if (this.isInteractive(e.target)) return
+      const isInteractive = (el) =>
+          el && el.closest && el.closest('a, button, input, textarea, select, [role="button"], [role="link"]')
+      if (isInteractive(e.target)) return
 
       const { clientY } = e
       const half = window.innerHeight / 2
 
       if (clientY < half && this.currentPage > 0) {
         this.currentPage--
-      } else if (
-          clientY >= half &&
-          this.currentPage < this.pages.length - 1
-      ) {
+      } else if (clientY >= half && this.currentPage < this.pages.length - 1) {
         this.currentPage++
       }
     },
-
     onTouchStart(e) {
-      if (!this.isMobileOrTablet) return
-      this.touchStartY = e.changedTouches[0].clientY
+      return
     },
-
     onTouchEnd(e) {
-      if (!this.isMobileOrTablet) return
-      this.touchEndY = e.changedTouches[0].clientY
-      this.handleSwipe()
+      return
     },
-
-    handleSwipe() {
-      const deltaY = this.touchStartY - this.touchEndY
-      if (deltaY > this.swipeThreshold) {
-        if (this.currentPage < this.pages.length - 1) {
-          this.currentPage++
-        }
-      } else if (deltaY < -this.swipeThreshold) {
-        if (this.currentPage > 0) {
-          this.currentPage--
-        }
-      }
-    },
-
     handleNav(index) {
       this.currentPage = index
     },
@@ -152,17 +128,21 @@ export default {
 
 <style>
 html,
-body,
-#app {
+body {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
   overflow: hidden;
-
   background: #000;
   color: #fff;
   font-family: 'Inter', sans-serif;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
 }
 
 .page {
@@ -189,12 +169,10 @@ body,
   cursor: pointer;
   transition: background-color 0.2s, color 0.2s;
 }
-
 .lang-btn:hover {
   background-color: #fff;
   color: #000;
 }
-
 .lang-btn.active {
   background-color: #fff;
   color: #000;
@@ -204,15 +182,34 @@ body,
   cursor: default;
 }
 
-/* ========== Large-screen styles (>=2560px) ========== */
 @media (min-width: 2560px) {
   .lang-btn {
     font-size: 1.8rem;
     padding: 8px 16px;
   }
-
   .nav button {
     font-size: 28px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  html,
+  body {
+    overflow-y: auto;
+    height: auto;
+  }
+  #app {
+    height: auto;
+    overflow-y: auto;
+  }
+  .page {
+    height: auto;
+  }
+  .pages-container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-top: 60px;
   }
 }
 </style>
