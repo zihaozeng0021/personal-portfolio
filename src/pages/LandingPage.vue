@@ -76,34 +76,34 @@ import MeltBall from '../components/CenterBall.vue'
 /* ========== Smaller screens (≤ 1200px) ========== */
 @media (max-width: 1200px) {
   .line1 {
-    font-size: 2.5rem;
+    font-size: 1.4rem;
     margin-bottom: 1.2rem;
   }
   .font1-alt {
-    font-size: 3rem;
+    font-size: 1.6rem;
   }
   .line2 {
-    font-size: 2rem;
+    font-size: 1.0rem;
   }
   .prefix {
-    font-size: 2.5rem;
+    font-size: 1.1rem;
   }
 }
 
 /* ========== Ultra-wide screens (≥ 2560px) ========== */
 @media (min-width: 2560px) {
   .line1 {
-    font-size: 6rem;
+    font-size: 7rem;
     margin-bottom: 3rem;
   }
   .font1-alt {
-    font-size: 7rem;
+    font-size: 8rem;
   }
   .line2 {
-    font-size: 5rem;
+    font-size: 6rem;
   }
   .prefix {
-    font-size: 7rem;
+    font-size: 9rem;
   }
 }
 </style>
