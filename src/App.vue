@@ -28,14 +28,18 @@
 
     <CustomCursor v-if="!isMobileOrTablet" />
 
+
     <div v-if="isMobileOrTablet" class="pages-container">
-      <component
+      <div
           v-for="(pageName, index) in pages"
           :key="index"
-          :is="pageName"
-          class="page"
-      />
+          :id="`page-${index}`"
+          class="page-wrapper"
+      >
+        <component :is="pageName" class="page" />
+      </div>
     </div>
+
     <component
         v-else
         :is="pages[currentPage]"
@@ -113,14 +117,21 @@ export default {
         this.currentPage++
       }
     },
+    handleNav(index) {
+      if (this.isMobileOrTablet) {
+        const el = document.getElementById(`page-${index}`)
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' })
+        }
+      } else {
+        this.currentPage = index
+      }
+    },
     onTouchStart(e) {
       return
     },
     onTouchEnd(e) {
       return
-    },
-    handleNav(index) {
-      this.currentPage = index
     },
   },
 }
@@ -148,6 +159,18 @@ body {
 .page {
   width: 100%;
   height: 100%;
+}
+
+.page-wrapper {
+  width: 100%;
+  height: auto;
+}
+
+.pages-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding-top: 60px;
 }
 
 .lang-switch {
@@ -204,12 +227,6 @@ body {
   }
   .page {
     height: auto;
-  }
-  .pages-container {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-    padding-top: 60px;
   }
 }
 </style>
