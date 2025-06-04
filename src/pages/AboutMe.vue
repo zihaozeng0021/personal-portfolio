@@ -83,7 +83,7 @@
 
             <!-- Others -->
             <div class="skill-category">
-              <h2>{{ $t('about.skills.others')}}</h2>
+              <h2>{{ $t('about.skills.others') }}</h2>
               <div
                   class="skill-item"
                   v-for="(skill, idx) in skillCategories[3].skills"
@@ -175,21 +175,23 @@ export default {
 
 <style scoped>
 .about-me {
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
+  width: 100%;
   background-color: #000000;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   padding-top: 10vh;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   box-sizing: border-box;
 }
 
 .content {
-  max-width: 900px;
-  width: 100%;
+  max-width: 100%;
+  width: 900px;
+  box-sizing: border-box;
+  padding: 0 1rem;
 }
 
 /* Title */
@@ -230,6 +232,7 @@ export default {
   font-size: 1.125rem;
   margin: 0.5rem 0;
   color: #ffffff;
+  line-height: 1.4;
 }
 
 /* Skills Section */
@@ -237,21 +240,25 @@ export default {
   margin-top: 1rem;
 }
 
-/* Two-column layout */
+/* Two-column layout with wrapping */
 .columns {
   display: flex;
   justify-content: space-between;
   gap: 2rem;
+  flex-wrap: wrap;
 }
 
-/* Each column takes equal width */
+/* Each column takes roughly 48% but can shrink */
 .column {
-  flex: 1;
+  flex: 1 1 48%;
+  box-sizing: border-box;
+  margin-bottom: 1.5rem;
+  min-width: 250px;
 }
 
 /* Skill Category */
 .skill-category {
-  margin-bottom: 0rem;
+  margin-bottom: 1rem;
 }
 
 .skill-category h2 {
@@ -265,29 +272,33 @@ export default {
   display: flex;
   align-items: center;
   margin-bottom: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .skill-label {
-  flex: 2;
+  flex: 2 1 120px;
   font-size: 1rem;
   color: #ffffff;
+  word-break: break-word;
 }
 
 .skill-percent {
-  flex: 0 0 2rem;
+  flex: 0 0 2.5rem;
   font-size: 0.9rem;
   color: #ffffff;
   text-align: right;
+  margin-left: 0.5rem;
 }
 
 /* Progress bar container */
 .bar {
-  flex: 1;
+  flex: 1 1 auto;
   background-color: #333333;
   border-radius: 4px;
   margin: 0 0.75rem;
   height: 10px;
   overflow: hidden;
+  min-width: 50px;
 }
 
 /* Filled portion */
@@ -319,9 +330,53 @@ export default {
   }
   .columns {
     flex-direction: column;
+    gap: 1.5rem;
   }
   .column {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .title {
+    font-size: 2rem;
+  }
+  .intro {
+    gap: 1rem;
     margin-bottom: 1.5rem;
+  }
+  .profile-photo {
+    width: 100px;
+    height: 100px;
+    border-width: 3px;
+  }
+  .description p {
+    font-size: 1rem;
+    margin: 0.4rem 0;
+  }
+  .skill-category h2 {
+    font-size: 1.15rem;
+    margin-bottom: 0.4rem;
+  }
+  .skill-item {
+    margin-bottom: 0.4rem;
+  }
+  .skill-label {
+    font-size: 0.95rem;
+    flex: 2 1 100px;
+  }
+  .skill-percent {
+    font-size: 0.8rem;
+    flex: 0 0 2rem;
+    margin-left: 0.3rem;
+  }
+  .bar {
+    margin: 0 0.5rem;
+    height: 8px;
+    min-width: 40px;
+  }
+  .note-text {
+    font-size: 0.8rem;
   }
 }
 </style>
