@@ -32,7 +32,7 @@ import MeltBall from '../components/CenterBall.vue'
   overflow: hidden;
 }
 
-.landing-page .melt-ball-container {
+.landing-page .center-ball-container {
   background-color: inherit;
 }
 
@@ -71,5 +71,39 @@ import MeltBall from '../components/CenterBall.vue'
   font-size: 5rem;
   font-weight: 700;
   visibility: hidden;
+}
+
+/* ========== Smaller screens (≤ 1200px) ========== */
+@media (max-width: 1200px) {
+  .line1 {
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+  }
+  .font1-alt {
+    font-size: 1.6rem;
+  }
+  .line2 {
+    font-size: 1.0rem;
+  }
+  .prefix {
+    font-size: 1.1rem;
+  }
+}
+
+/* ========== Ultra-wide screens (≥ 2560px) ========== */
+@media (min-width: 2560px) {
+  .line1 {
+    font-size: 7rem;
+    margin-bottom: 3rem;
+  }
+  .font1-alt {
+    font-size: 8rem;
+  }
+  .line2 {
+    font-size: 6rem;
+  }
+  .prefix {
+    font-size: 9rem;
+  }
 }
 </style>

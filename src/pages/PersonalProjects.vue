@@ -1,4 +1,4 @@
-< !-- src/pages/PersonalProjects.vue -->
+<!-- src/pages/PersonalProjects.vue -->
 <template>
   <section class="projects">
     <div class="projects-container">
@@ -6,13 +6,13 @@
       <div class="projects-grid">
         <!-- Project 1 -->
         <div class="project-item">
-          <h2 class="project-title">{{$t('projects.entries[0].name')}}</h2>
+          <h2 class="project-title">{{ $t('projects.entries[0].name') }}</h2>
           <p class="project-description">
-            {{$t('projects.entries[0].description')}}
+            {{ $t('projects.entries[0].description') }}
           </p>
           <div class="buttons">
-            <button class="btn" @click="handleDemoClick">{{$t('projects.demo')}}</button>
-            <button class="btn" @click="handleCodeClick">{{$t('projects.code')}}</button>
+            <button class="btn" @click="handleDemoClick">{{ $t('projects.demo') }}</button>
+            <button class="btn" @click="handleCodeClick">{{ $t('projects.code') }}</button>
           </div>
         </div>
 
@@ -35,8 +35,8 @@
             {{ $t('projects.entries[2].description') }}
           </p>
           <div class="buttons">
-            <button class="btn" @click="handleDemoClick">{{$t('projects.demo')}}</button>
-            <button class="btn" @click="handleCodeClick">{{$t('projects.code')}}</button>
+            <button class="btn" @click="handleDemoClick">{{ $t('projects.demo') }}</button>
+            <button class="btn" @click="handleCodeClick">{{ $t('projects.code') }}</button>
           </div>
         </div>
       </div>
@@ -63,6 +63,11 @@ export default {
   width: 100vw;
   background-color: #000000;
   color: #ffffff;
+
+  min-height: 100vh;
+
+  cursor: none;
+
   display: flex;
   justify-content: center;
   padding: 2rem 0;
@@ -120,12 +125,6 @@ export default {
   flex-grow: 1;
 }
 
-.buttons {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
 .btn {
   padding: 0.5rem 1.2rem;
   font-size: 0.9rem;
@@ -133,13 +132,21 @@ export default {
   background: transparent;
   border: 1px solid #ffffff;
   border-radius: 4px;
+
   cursor: pointer;
+
   transition: background 0.2s ease, color 0.2s ease;
 }
 
 .btn:hover {
   background: #ffffff;
   color: #000000;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
 /* Responsive: stack columns on narrower screens */
